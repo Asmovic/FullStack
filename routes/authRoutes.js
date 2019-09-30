@@ -1,11 +1,11 @@
 const Passport = require('passport');
 
 module.exports = (app) => {
-    app.get('/', (req, res) => {
-        res.send({
-            Hi: "Asmovic"
-        })
-    })
+    /*     app.get('/', (req, res) => {
+            res.send({
+                Hi: "Asmovic"
+            })
+        }) */
     app.get('/api/logout', (req, res) => {
         req.logout();
         res.redirect('/');

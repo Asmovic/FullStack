@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Payments from './Payments';
 
 class Header extends Component {
@@ -22,9 +22,9 @@ class Header extends Component {
         return (
             <nav>
                 <div className='nav-wrapper'>
-                    <BrowserRouter>
-                        <Link to={this.props.auth ? '/surveys' : '/'} className='left brand-logo'>Emaily</Link>
-                    </BrowserRouter>
+
+                    <Link to={this.props.auth ? '/surveys' : '/'} className='left brand-logo'>Emaily</Link>
+
                     <ul className='right'>
                         {this.renderContent()}
                     </ul>

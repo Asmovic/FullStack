@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './Header';
 import Landing from './Landing';
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 import * as actions from '../actions';
 
 class App extends Component {
@@ -10,17 +12,14 @@ class App extends Component {
         this.props.fetchUser();
     }
     render() {
-
-        const Dashboard = () => <h2>Dashboard</h2>;
-        const newSurvey = () => <h2>newSurvey</h2>;
-
         return (
             <div className='container'>
-                <Header />
+                
                 <BrowserRouter>
+                <Header />
                     <Route path='/' exact component={Landing} />
                     <Route path='/surveys' exact component={Dashboard} />
-                    <Route path='/surveys/new' component={newSurvey} />
+                    <Route path='/surveys/new' component={SurveyNew} />
                 </BrowserRouter>
             </div>
 

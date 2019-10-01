@@ -38,6 +38,7 @@ function validate(values) {
 
     const error = {};
     error.recipients = validateEmails(values.recipients || '');
+    error.from = validateEmails(values.from || '');
     const vowels = ['a', 'e', 'i', 'o', 'u']
     _.each(Fields, ({ name }) => {
 

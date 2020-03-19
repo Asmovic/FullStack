@@ -22,10 +22,10 @@ module.exports = app => {
     })
 
     app.post('/api/surveys/webhooks', (req, res) => {
-        console.log('inside the webhooks');
+
         const p = new Path('/api/surveys/:surveyId/:choice');
         _.chain(req.body).map(({ email, url }) => {
-            console.log("my-url", url);
+         
             const match = p.test(new URL(url).pathname);
             if (match) {
                 const { surveyId, choice } = match;
